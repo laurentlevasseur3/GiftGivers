@@ -26,7 +26,7 @@ public class Main {
 				while (q < b) {
 				  for (int h = 0; h < friends.length; h++) {
 				    if (scan.nextLine() == friends[i].getName()) {
-				      friends[h].receiveMoney();
+				      friends[h].receiveMoney(friends[h]);
 				      q++;
 				    }
 				  }
@@ -40,4 +40,3 @@ public class Main {
 		
 	}
 }
-	
