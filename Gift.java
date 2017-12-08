@@ -6,7 +6,7 @@ public class Gift {
 	{
 		Scanner scan = new Scanner (System.in);
 		int NP = scan.nextInt();
-		Account[] friends = Account[NP]; //makes array of names
+		Account[] friends = new Account[NP]; //makes array of names
 		for (int i = 0; i < NP; i++) //sets element of array to input
 		{
 			friends[i] = new Account(scan.nextLine());
@@ -30,7 +30,7 @@ public class Gift {
 						b = b - j;
 						j = 0;
 					}
-					friends[i + j].receiveMoney();
+					friends[i + j].receiveMoney(friends[i + j]);
 				}
 			}
 		}
@@ -39,35 +39,6 @@ public class Gift {
 			System.out.println(friends[i].getName() + " " + friends[i].getBalance());
 		}
 		
-	}
-	class Account {
-		int balance;
-		int money;
-		String name;
-		public Account(String name)
-		{
-			this.name = name;
-			this.balance = 0;
-		}
-		public void giveMoney(int gift, int people)
-		{
-			money = gift;
-			int leftOvers = money % people;
-			money = money / people;
-			balance = balance - money + leftOvers;
-			
-		}
-		public void receiveMoney(Account account)
-		{
-			balance += money;
-		}
-		public int getBalance()
-		{
-			return balance;
-		}
-		public String getName() {
-			return name;
-		}
 	}
 
 }
